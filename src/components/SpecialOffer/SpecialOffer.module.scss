@@ -1,0 +1,132 @@
+.specialOffer {
+  padding: clamp(3rem, 10vh, 6rem) clamp(1rem, 5vw, 3rem);
+  
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  &__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: clamp(1rem, 3vh, 2rem);
+    color: #333;
+  }
+  
+  &__subtitle {
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    color: #007BFF;
+    margin-bottom: clamp(0.8rem, 2vh, 1.5rem);
+    font-weight: 700;
+  }
+  
+  &__description {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: #666;
+    margin-bottom: clamp(2rem, 6vh, 4rem);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &__link {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.8rem, 2vw, 1.2rem) clamp(2.5rem, 6vw, 4rem);
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 700;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid #727272;
+    background: white;
+    color: black;
+    z-index: 2;
+    
+    &:hover {
+      color: white;
+      border-color: transparent;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(255, 51, 0, 0.6);
+      
+      .flame {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.linkText {
+  position: relative;
+  z-index: 3;
+  transition: color 0.3s ease;
+}
+
+.flame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, 
+    #ff3300 0%, 
+    #ff6600 20%, 
+    #ffaa00 40%, 
+    #ffff00 60%, 
+    #ffaa00 80%, 
+    #ff6600 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  border-radius: 100px;
+  animation: flameAnimation 1.5s infinite alternate;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -20%;
+    width: 140%;
+    height: 30px;
+    transform: rotate(-10deg);
+    animation: flameShine 1.2s infinite linear;
+  }
+}
+
+@keyframes flameAnimation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes flameShine {
+  0% { left: -20%; }
+  100% { left: 120%; }
+}
+
+@media (max-width: 768px) {
+  .specialOffer {
+    padding: clamp(2rem, 8vh, 4rem) clamp(1rem, 4vw, 2rem);
+  }
+  
+  .specialOffer__link {
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .specialOffer__title {
+    font-size: 1.8rem;
+  }
+  
+  .specialOffer__subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .specialOffer__description {
+    font-size: 1.1rem;
+  }
+}

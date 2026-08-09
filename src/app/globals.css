@@ -1,0 +1,28 @@
+body,
+p,
+span {
+  font-family: var(--font-body);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: white;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,221 @@
+.services {
+  padding: clamp(3rem, 6vh, 5rem) clamp(1rem, 5vw, 3rem);
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  text-align: center;
+  margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem);
+  color: #333;
+  position: relative;
+  padding-bottom: 15px;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(80px, 15vw, 150px);
+    height: 4px;
+    background: linear-gradient(90deg, #007BFF, #00bfff);
+  }
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  text-align: center;
+  color: #555;
+  margin-bottom: clamp(2rem, 4vh, 3.5rem);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.servicesTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  
+  th, td {
+    padding: clamp(1rem, 1.8vw, 1.5rem);
+    text-align: left;
+  }
+  
+  thead {
+    background: linear-gradient(90deg, #007BFF, #00bfff);
+    
+    th {
+      color: white;
+      font-weight: 600;
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      
+      &:first-child {
+        border-top-left-radius: 12px;
+      }
+      
+      &:last-child {
+        border-top-right-radius: 12px;
+      }
+    }
+  }
+  
+  tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s ease;
+    
+    &:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    
+    &:hover {
+      background-color: #e6f7ff;
+    }
+    
+    &:last-child {
+      border-bottom: none;
+      
+      td:first-child {
+        border-bottom-left-radius: 12px;
+      }
+      
+      td:last-child {
+        border-bottom-right-radius: 12px;
+      }
+    }
+  }
+  
+  td {
+    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+    color: #333;
+  }
+}
+
+.priceCell {
+  font-weight: 700;
+  color: #007BFF;
+}
+
+.mobileCards {
+  display: none;
+}
+
+.serviceCard {
+  background: white;
+  border-radius: 12px;
+  padding: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
+  padding-bottom: clamp(0.5rem, 1.5vw, 0.8rem);
+  border-bottom: 1px solid #eee;
+}
+
+.cardTitle {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  color: #333;
+  margin: 0;
+}
+
+.cardPrice {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: 700;
+  color: #007BFF;
+  background: #e6f7ff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+}
+
+.cardDetails {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+}
+
+.detailItem {
+  display: flex;
+  gap: 0.8rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  line-height: 1.5;
+}
+
+.detailLabel {
+  font-weight: 600;
+  color: #555;
+  min-width: 100px;
+}
+
+@media (max-width: 1024px) {
+  .servicesTable {
+    th, td {
+      padding: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tableContainer {
+    display: none;
+  }
+  
+  .mobileCards {
+    display: block;
+  }
+  
+  .cardDetails {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .services {
+    padding: 2rem 1rem;
+  }
+  
+  .title {
+    font-size: clamp(1.5rem, 6vw, 1.8rem);
+  }
+  
+  .subtitle {
+    font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+  }
+  
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .detailItem {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  
+  .detailLabel {
+    min-width: auto;
+  }
+}
