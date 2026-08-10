@@ -19,31 +19,31 @@
 }
 
 .logoContainer {
-  position: relative;
-  display: inline-block;
-  height: clamp(2rem, 5vw, 3.5rem);
-  width: clamp(2rem, 5vw, 3.5rem); 
-  margin-right: 10px;
+    position: relative;
+    display: inline-block;
+    height: clamp(2rem, 5vw, 3.5rem);
+    width: clamp(2rem, 5vw, 3.5rem);
+    margin-right: 10px;
 }
 
 .logo {
-  object-fit: contain; 
-  width: 100% !important; 
-  height: 100% !important;
-  position: relative !important;
+    object-fit: contain;
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
 }
 
 .logolink {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .logolink__span {
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  font-weight: 700;
-  color: black;
-  font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 700;
+    color: black;
+    font-family: var(--font-heading);
 }
 
 .nav__ul {
@@ -57,7 +57,7 @@
 }
 
 .ul__link {
-    color: black;
+    color: rgb(226, 85, 85);
     text-decoration: none;
     font-size: clamp(1rem, 1.5vw, 1.2rem);
     font-weight: 500;
@@ -99,7 +99,7 @@
     span {
         width: 100%;
         height: 2px;
-        background: #333;
+        background: #d43f3f;
         transition: all 0.3s ease;
         position: relative;
         transform-origin: center;
