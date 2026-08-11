@@ -6,7 +6,7 @@ import Link from "next/link";
 import { memo, useState, useCallback, useRef, useEffect } from "react";
 import Image from "next/image";
 
-// Компонент для иконки "галочка"
+
 const CheckIcon = memo(() => (
   <svg className={s.checkIcon} width="20" height="20" viewBox="0 0 20 20" fill="none">
     <circle cx="10" cy="10" r="10" fill="#4CAF50" />
@@ -15,7 +15,7 @@ const CheckIcon = memo(() => (
 ));
 CheckIcon.displayName = 'CheckIcon';
 
-// Компонент для видео с состояниями загрузки
+
 const VideoPlayer = memo(({ src, poster }: { src: string; poster?: string }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -76,7 +76,7 @@ const VideoPlayer = memo(({ src, poster }: { src: string; poster?: string }) => 
 });
 VideoPlayer.displayName = 'VideoPlayer';
 
-// Основной компонент
+
 export const Service = memo(({
   title,
   description,
@@ -103,7 +103,7 @@ export const Service = memo(({
       onMouseLeave={handleMouseLeave}
     >
       <div className={s.container}>
-        {/* Медиа-блок */}
+
         <div className={s.mediaBlock}>
           <header className={s.header}>
             <h2 className={s.title}>{title}</h2>
@@ -115,7 +115,7 @@ export const Service = memo(({
           </div>
         </div>
 
-        {/* Информационный блок */}
+
         <div className={s.infoBlock}>
           <h3 className={s.infoTitle}>Что включено:</h3>
 
