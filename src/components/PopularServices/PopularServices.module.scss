@@ -1,40 +1,13 @@
 .popularServices {
-    padding: clamp(3rem, 8vh, 5rem) clamp(1rem, 5vw, 3rem);
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: -100px;
-        right: -100px;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, rgba(60, 175, 207, 0.05) 0%, transparent 70%);
-        border-radius: 50%;
-        pointer-events: none;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -80px;
-        left: -80px;
-        width: 300px;
-        height: 300px;
-        background: radial-gradient(circle, rgba(60, 175, 207, 0.03) 0%, transparent 70%);
-        border-radius: 50%;
-        pointer-events: none;
-    }
+    padding: clamp(3rem, 8vh, 6rem) clamp(1rem, 5vw, 3rem);
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
 }
+
 
 .header {
     text-align: center;
@@ -43,98 +16,52 @@
 
 .badge {
     display: inline-block;
-    background: linear-gradient(90deg, #3CAFCF, #007BFF);
+    background: linear-gradient(135deg, #007BFF, #00bfff);
     color: white;
-    font-size: clamp(0.7rem, 1vw, 0.85rem);
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 2px;
-    padding: 0.4rem 1.2rem;
+    letter-spacing: 0.08em;
+    padding: 0.4rem 1rem;
     border-radius: 100px;
     text-transform: uppercase;
-    margin-bottom: clamp(1rem, 2vh, 1.5rem);
+    margin-bottom: 0.8rem;
 }
 
 .title {
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
-    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3rem);
     color: #1a202c;
-    margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem);
-    position: relative;
-    display: inline-block;
-
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: clamp(60px, 10vw, 100px);
-        height: 4px;
-        background: linear-gradient(90deg, #3CAFCF, #007BFF);
-        border-radius: 2px;
-    }
+    margin-bottom: 0.8rem;
 }
 
 .subtitle {
-    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
     color: #4a5568;
     max-width: 600px;
-    margin: clamp(1.2rem, 2vh, 1.8rem) auto 0;
-    line-height: 1.6;
+    margin: 0 auto;
 }
+
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: clamp(1.5rem, 3vw, 2.5rem);
-    margin-bottom: clamp(2.5rem, 5vh, 4rem);
+    margin-bottom: clamp(2rem, 5vh, 3.5rem);
 }
 
 .card {
+    position: relative;
     background: white;
     border-radius: 16px;
-    padding: clamp(1.8rem, 3vw, 2.5rem);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    position: relative;
-    overflow: hidden;
+    padding: clamp(1.5rem, 2.5vw, 2.5rem);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #edf2f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     opacity: 0;
     transform: translateY(30px);
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, #3CAFCF, #007BFF);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.4s ease;
-    }
-
-    &:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 35px rgba(60, 175, 207, 0.15);
-
-        &::before {
-            transform: scaleX(1);
-        }
-
-        .iconWrapper {
-            transform: scale(1.05) rotate(-5deg);
-            background: linear-gradient(135deg, #3CAFCF, #007BFF);
-        }
-
-        .icon {
-            filter: brightness(0) invert(1);
-        }
-
-        .cardTitle {
-            color: #3CAFCF;
-        }
-    }
 }
 
 .cardHidden {
@@ -145,240 +72,149 @@
 .card.visible {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cardHovered {
     transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(60, 175, 207, 0.15);
-
-    &::before {
-        transform: scaleX(1);
-    }
+    box-shadow: 0 12px 40px rgba(0, 123, 255, 0.15);
+    border-color: #007BFF;
 }
+
 
 .popularBadge {
     position: absolute;
-    top: 16px;
+    top: -10px;
     right: 16px;
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    background: linear-gradient(135deg, #ff6b35, #ff4500);
     color: white;
-    font-size: clamp(0.65rem, 0.8vw, 0.75rem);
-    font-weight: 600;
-    padding: 0.3rem 0.8rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.8rem;
     border-radius: 100px;
-    box-shadow: 0 4px 12px rgba(238, 90, 36, 0.3);
-
-    span {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-    }
+    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
 }
 
+.popularBadge span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+
 .iconWrapper {
-    width: clamp(64px, 8vw, 80px);
-    height: clamp(64px, 8vw, 80px);
-    border-radius: 16px;
-    background: linear-gradient(135deg, #e6f7ff, #d4edf5);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e6f7ff, #b3e0ff);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: clamp(1.2rem, 2vw, 1.8rem);
-    transition: all 0.4s ease;
+    margin-bottom: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.cardHovered .iconWrapper {
+    transform: scale(1.05) rotate(-5deg);
 }
 
 .icon {
-    width: clamp(36px, 4vw, 48px);
-    height: clamp(36px, 4vw, 48px);
+    width: 48px;
+    height: 48px;
     object-fit: contain;
-    transition: filter 0.3s ease;
 }
 
+
 .cardTitle {
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
     font-weight: 700;
     color: #1a202c;
-    margin-bottom: clamp(0.5rem, 1vw, 0.8rem);
-    transition: color 0.3s ease;
+    margin-bottom: 0.5rem;
 }
 
 .cardDescription {
     font-size: clamp(0.9rem, 1.2vw, 1rem);
     color: #4a5568;
-    line-height: 1.6;
-    margin-bottom: clamp(1.2rem, 2vw, 1.8rem);
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+    flex: 1;
 }
+
 
 .cardFooter {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: clamp(1rem, 1.5vw, 1.5rem);
+    width: 100%;
+    padding-top: 1rem;
     border-top: 1px solid #edf2f7;
-    flex-wrap: wrap;
-    gap: 0.5rem;
 }
 
 .priceBlock {
     display: flex;
     align-items: baseline;
-    gap: 4px;
+    gap: 0.2rem;
 }
 
 .priceLabel {
-    font-size: clamp(0.75rem, 0.8vw, 0.85rem);
+    font-size: 0.8rem;
     color: #a0aec0;
-    font-weight: 500;
 }
 
 .priceValue {
-    font-size: clamp(1.2rem, 2vw, 1.6rem);
-    font-weight: 800;
-    color: #3CAFCF;
+    font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+    font-weight: 700;
+    color: #007BFF;
 }
 
 .durationBlock {
     display: flex;
     align-items: center;
-    gap: 6px;
-    background: #f7fafc;
-    padding: 0.3rem 0.8rem;
-    border-radius: 100px;
+    gap: 0.3rem;
+    color: #4a5568;
+    font-size: 0.9rem;
 }
 
 .durationIcon {
-    font-size: clamp(0.9rem, 1vw, 1.1rem);
+    font-size: 1rem;
 }
 
-.durationText {
-    font-size: clamp(0.8rem, 0.9vw, 0.95rem);
-    color: #4a5568;
-    font-weight: 500;
-}
 
 .ctaWrapper {
-    text-align: center;
-    margin-top: clamp(1.5rem, 3vh, 2.5rem);
+    display: flex;
+    justify-content: center;
 }
 
 .ctaButton {
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(2rem, 4vw, 3.5rem);
-    background: linear-gradient(90deg, #3CAFCF, #007BFF);
-    color: white;
-    text-decoration: none;
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-    font-weight: 600;
+    gap: 0.5rem;
+    padding: 0.8rem 2.5rem;
     border-radius: 100px;
+    background: linear-gradient(135deg, #007BFF, #00bfff);
+    color: white;
+    font-weight: 600;
+    font-size: clamp(1rem, 1.4vw, 1.1rem);
+    text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(60, 175, 207, 0.3);
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 123, 255, 0.3);
+}
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s ease;
-    }
-
-    &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 30px rgba(60, 175, 207, 0.4);
-        background: linear-gradient(90deg, #007BFF, #3CAFCF);
-
-        &::before {
-            left: 100%;
-        }
-
-        .ctaArrow {
-            transform: translateX(4px);
-        }
-    }
-
-    &:active {
-        transform: translateY(0);
-    }
+.ctaButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 123, 255, 0.4);
 }
 
 .ctaArrow {
-    display: inline-block;
     transition: transform 0.3s ease;
-    font-size: clamp(1.2rem, 1.8vw, 1.5rem);
 }
 
-// Responsive
-@media (max-width: 1024px) {
-    .grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.5rem;
-    }
+.ctaButton:hover .ctaArrow {
+    transform: translateX(6px);
 }
+
 
 @media (max-width: 768px) {
-    .popularServices {
-        padding: 2.5rem 1rem;
-    }
-
-    .title {
-        font-size: clamp(1.8rem, 5vw, 2.5rem);
-    }
-
-    .subtitle {
-        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-    }
-
-    .grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.2rem;
-    }
-
-    .card {
-        padding: 1.5rem;
-    }
-
-    .iconWrapper {
-        width: 56px;
-        height: 56px;
-
-        .icon {
-            width: 32px;
-            height: 32px;
-        }
-    }
-
-    .cardFooter {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.8rem;
-    }
-
-    .durationBlock {
-        align-self: flex-start;
-    }
-}
-
-@media (max-width: 480px) {
-    .popularServices {
-        padding: 2rem 1rem;
-    }
-
-    .title {
-        font-size: clamp(1.5rem, 6vw, 2rem);
-    }
-
-    .badge {
-        font-size: 0.6rem;
-        padding: 0.3rem 1rem;
-    }
-
     .grid {
         grid-template-columns: 1fr;
         max-width: 400px;
@@ -387,57 +223,39 @@
     }
 
     .card {
-        padding: 1.2rem;
-    }
-
-    .cardTitle {
-        font-size: 1.1rem;
-    }
-
-    .cardDescription {
-        font-size: 0.9rem;
-    }
-
-    .priceValue {
-        font-size: 1.3rem;
-    }
-
-    .ctaButton {
-        padding: 0.8rem 2rem;
-        font-size: 1rem;
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 360px) {
-    .title {
-        font-size: 1.3rem;
-    }
-
-    .subtitle {
-        font-size: 0.85rem;
-    }
-
-    .card {
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     .iconWrapper {
-        width: 48px;
-        height: 48px;
-
-        .icon {
-            width: 28px;
-            height: 28px;
-        }
+        width: 64px;
+        height: 64px;
     }
 
-    .cardTitle {
-        font-size: 1rem;
+    .icon {
+        width: 36px;
+        height: 36px;
     }
 
-    .priceValue {
-        font-size: 1.1rem;
+    .ctaButton {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .popularServices {
+        padding: 2rem 1rem;
+    }
+
+    .cardFooter {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: stretch;
+    }
+
+    .priceBlock,
+    .durationBlock {
+        justify-content: center;
     }
 }
